@@ -130,7 +130,7 @@ def pq_from_transform(A2B, strict_check=True):
         Position and orientation quaternion: (x, y, z, qw, qx, qy, qz)
     """
     A2B = check_transform(A2B, strict_check=strict_check)
-    return np.hstack((A2B[:3, 3], quaternion_from_matrix(A2B[:3, :3])))
+    return np.hstack((A2B[:3, 3], quaternion_from_matrix(A2B[:3, :3], strict_check=strict_check)))
 
 
 def transform_from_pq(pq):
